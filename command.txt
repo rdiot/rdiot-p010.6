@@ -1,0 +1,14 @@
+-- HDMI포트에 화면 끄기
+echo 1 > /sys/class/graphics/fb0/blank
+ 
+-- HDMI포트에 화면 켜기 
+echo 0 > /sys/class/graphics/fb0/blank
+ 
+-- 커서 blink Disable
+echo 0 > /sys/class/graphics/fbcon/cursor_blink
+ 
+-- artik 10 DHMI 사진 Display
+fbi -T 2 B014.jpg
+ 
+-- artik 10 DHMI 동영상Play
+mplayer -vo fbdev2 -framedrop S207.mp4
